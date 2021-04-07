@@ -2,21 +2,31 @@
   <div class="container-fluid">
     <div class="d-flex justify-content-between">
         <div class="navbar-nav">
-            <a class="navbar-brand text-white" href="/"><i class="fas fa-umbrella-beach"></i></a>
+            <%= link_to root_path, class: "nav-link" do %>
+               <i class="fas fa-umbrella-beach text-white"></i>
+            <% end %>
         </div>
         <div id="navbarNav">
             <ul class="navbar-nav text-secondary">
                 <li class="nav-item pe-2">
-                <a class="nav-link" aria-current="page" href="/"><i class="fas fa-pencil-alt"></i></a>
+                  <%= link_to root_path, class: "nav-link" do %>
+                    <i class="fas fa-pencil-alt"></i>
+                  <% end %>
                 </li>
                 <li class="nav-item pe-2">
-                <a class="nav-link" href="/"><i class="fas fa-envelope"></i></a>
+                  <%= link_to root_path, class: "nav-link" do %>
+                    <i class="fas fa-envelope"></i>
+                  <% end %>
                 </li>
                 <li class="nav-item pe-2">
-                <a class="nav-link" href="/"><i class="fas fa-search"></i></a>
+                  <%= link_to root_path, class: "nav-link" do %>
+                    <i class="fas fa-search"></i>
+                  <% end %>
                 </li>
                 <li class="nav-item pe-2">
-                <a class="nav-link" href="/"><i class="fas fa-cog"></i></a>
+                  <%= link_to root_path, class: "nav-link" do %>
+                    <i class="fas fa-cog"></i>
+                  <% end %>
                 </li>
             </ul>
         </div>
