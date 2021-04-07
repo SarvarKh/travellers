@@ -1,21 +1,31 @@
 <%= form_for(@user) do |form| %>
-    <p>
-        <%= form.label :username %>
-        <%= form.text_field :username %>
+
+    <% if @user.errors.any? %>
+        <div class="alert alert-danger">
+            <h5 class="fw-bold">Invalid input!</h5>
+            <%= @user.errors.full_messages.each do |error| %>
+                <div><%= error %></div>
+            <% end %>
+        </div>
+    <% end %>
+
+    <p class="mb-3">
+        <%= form.label :username, class: "form-label" %>
+        <%= form.text_field :username, class: "form-control", autofocus: true, placeholder: "John_D" %>
     </p>
-    <p>
+    <p class="mb-3">
         <%= form.label :full_name %>
-        <%= form.text_field :full_name %>
+        <%= form.text_field :full_name, class: "form-control", placeholder: "John Doe" %>
     </p>
-    <p>
+    <p class="mb-3">
         <%= form.label :photo %>
-        <%= form.text_area :photo %>
+        <%= form.text_area :photo, class: "form-control", placeholder: "john_doe_image.jpeg" %>
     </p>
-    <p>
+    <p class="mb-3">
         <%= form.label :cover_image %>
-        <%= form.text_area :cover_image %>
+        <%= form.text_area :cover_image, class: "form-control", placeholder: "john_doe_cover_image.jpeg" %>
     </p>
-    <p>
-        <%= form.submit %>
+    <p class="mb-3">
+        <%= form.submit "Sign up", class: "btn btn-primary" %>
     </p>
 <% end %>
