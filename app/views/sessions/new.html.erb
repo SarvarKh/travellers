@@ -1,0 +1,12 @@
+<h1>Sign in</h1>
+
+<%= form_with url: sign_in_path do |form| %>
+    <p class="mb-3">
+        <%= form.label :username, class: "form-label" %>
+        <%= form.text_field :username, class: "form-control", autofocus: true, placeholder: "John_D" %>
+    </p>
+
+    <p class="mb-3">
+        <%= form.submit "Sign in", class: "btn btn-primary" %>
+    </p>
+<% end %>

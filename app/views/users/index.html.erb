@@ -1,8 +1,23 @@
-<% @users.each do |user| %>
-    <p>
-        <strong>Username:</strong> <%= user.username %> <br>
-        <strong>Full Name:</strong>  <%= user.full_name %> <br>
-        <strong>Photo:</strong>  <%= user.photo %> <br>
-        <strong>Cover Image:</strong>  <%= user.cover_image %> <br>
-    </p>
+<% if @user %>
+    <div>
+        Logged in as: <%= @user.username %>
+    </div>
+    <div>
+        <%= button_to 'Log out', logout_path, method: :delete %>
+    </div>
+
+    <% @users.each do |user| %>
+        <p>
+            <strong>Username:</strong> <%= user.username %> <br>
+            <strong>Full Name:</strong>  <%= user.full_name %> <br>
+            <strong>Photo:</strong>  <%= user.photo %> <br>
+            <strong>Cover Image:</strong>  <%= user.cover_image %> <br>
+        </p>
+    <% end %>
+
+<% else %>
+    <%= render partial: "shared/registration" %>
 <% end %>
+
+
+

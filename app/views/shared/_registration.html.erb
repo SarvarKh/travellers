@@ -1,1 +1,6 @@
-<%= link_to 'Sign up', new_user_path %>
+<div class="d-flex flex-column bd-highlight mb-3 text-center">
+    <h2 class="p-2 bd-highlight">Welcome to the Travellers web page.</h2>
+    <div class="p-2 bd-highlight">
+        Please <%= link_to 'Log in', sign_in_path %> or <%= link_to 'Sign up', new_user_path %>.
+    </div>
+</div>
