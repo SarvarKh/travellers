@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
     def index
+        # flash.now[:notice] = "Logged in successfully"
+        # flash.now[:alert] = "Invalid email"
+
         @users = User.all
     end
 
