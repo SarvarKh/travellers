@@ -1,0 +1,37 @@
+<% if Current.user %>
+    <%# Create travel tweet %>
+    <%= form_for(@opinion) do |form| %>
+
+        <% if @opinion.errors.any? %>
+            <div class="alert alert-danger">
+                <h5 class="fw-bold">Invalid input!</h5>
+                <%= @opinion.errors.full_messages.each do |error| %>
+                    <div><%= error %></div>
+                <% end %>
+            </div>
+        <% end %>
+
+        
+        <p class="mb-3">
+            <%= form.label :Travel_tweet %> <br>
+            <%= form.text_field :text, class: "form-control", placeholder: "Share your experience about your trip." %>
+        </p>
+        <p class="mb-3">
+            <%= form.submit "Create travel tweet", class: "btn btn-primary" %>
+        </p>
+    <% end %>
+
+    <%# List travel tweets %>
+    <% @opinions.each do |opinion| %>
+        <p>
+            <strong>Username:</strong> <%= opinion.author.username %> <br>
+            <strong>Text:</strong> <%= opinion.text %> <br>
+        </p>
+    <% end %>
+
+    <% else %>
+    <%= render partial: "shared/registration" %>
+<% end %>
+
+
+

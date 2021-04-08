@@ -17,10 +17,16 @@
 
   <body>
     <%= render partial: "shared/navbar" %>
+    <%= render partial: "shared/flash" %>
+    
 
-    <div class="container p-2">
-      <%= render partial: "shared/flash" %>
-      <%= yield %>
+    
+    <div>
+      <div class="d-flex bd-highlight">
+        <div><%= render partial: "shared/left_sidebar" %></div>
+        <div><%= yield %></div>
+      
+      </div>
     </div>
   </body>
 </html>
