@@ -1,6 +1,6 @@
-<% if @user %>
+<% if Current.user %>
     <div>
-        Logged in as: <%= @user.username %>
+        Logged in as: <%= Current.user.username %>
     </div>
     <div>
         <%= button_to 'Log out', logout_path, method: :delete %>
