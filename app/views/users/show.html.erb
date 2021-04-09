@@ -1,20 +1,25 @@
-<div class="container">
-    <img src="..." class="img-fluid" alt="Responsive image">
+<div class="d-flex bd-highlight">
 
-    <% @user.opinions.each do|opinion| %>    
-        <div class="card mb-3" style="max-width: 540px;">
-        <div class="row g-0">
-            <div class="col-md-4">
-            <img src="..." alt="@user.photo">
+    <div class="container">
+        <img src="..." class="img-fluid" alt="Responsive image">
+
+        <% @user.opinions.each do|opinion| %>    
+            <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+                <div class="col-md-4">
+                <img src="..." alt="@user.photo">
+                </div>
+                <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title"><%= @user.username %></h5>
+                    <p class="card-text"><%= opinion.text %></p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+                </div>
             </div>
-            <div class="col-md-8">
-            <div class="card-body">
-                <h5 class="card-title"><%= @user.username %></h5>
-                <p class="card-text"><%= opinion.text %></p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
-            </div>
-        </div>
-        </div>    
-    <% end %>
+            </div>    
+        <% end %>
+    </div>
+
+    <div><%= render partial: "shared/right_sidebar_profile" %></div>
 </div>
