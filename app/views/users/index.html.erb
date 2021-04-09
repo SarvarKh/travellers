@@ -1,11 +1,4 @@
 <% if Current.user %>
-    <div>
-        Logged in as: <%= Current.user.username %>
-    </div>
-    <div>
-        <%= button_to 'Log out', logout_path, method: :delete %>
-    </div>
-
     <% @users.each do |user| %>
         <p>
             <strong>Username:</strong> <%= user.username %> <br>
@@ -18,6 +11,3 @@
 <% else %>
     <%= render partial: "shared/registration" %>
 <% end %>
-
-
-
