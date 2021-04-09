@@ -1,6 +1,6 @@
 module ApplicationHelper
     def follow_or_unfollow_friend_request(user)
-        show_btns(user) unless Current.user == user || followed?(user)
+        show_btns(user) unless Current.user == user
     end
     
     def show_btns(user)
@@ -9,7 +9,7 @@ module ApplicationHelper
         button_to(
          'Unfollow',
          following_path(id: followed.id, follower_id: Current.user.id, followed_id: user.id),
-         method: :delete, class: 'btn btn-alert'
+         method: :delete, class: 'btn unfollow'
        )
      else
        button_to(
@@ -18,9 +18,5 @@ module ApplicationHelper
          method: :post, class: 'btn btn-primary'
          )
        end
-    end
-
-    def followed?(user)
-        Following.find_by(follower_id: Current.user.id, followed_id: user.id)
     end
 end
