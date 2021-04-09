@@ -1,0 +1,56 @@
+<div class="container">
+    <div>
+        <div class="card" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="@user.photo">
+            <div class="card-body">
+                <h5 class="card-title link-dark fw-bold"><%= @user.username %></h5>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="card-group">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold">6,542</h5>
+                    <p class="card-text"><small class="text-muted">Tweets</small></p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold">323</h5>
+                    <p class="card-text"><small class="text-muted">Following</small></p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold">16M</h5>
+                    <p class="card-text"><small class="text-muted">Followers</small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">FOLLOWED BY</h5>
+        </div>
+    </div>
+    <div>
+        <% @user.followings.each do |user| %>
+            <div class="card mb-3" style="min-width: 280px;">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="..." alt="user.photo">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <%= user %>
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <% end %>
+    </div>
+</div>
