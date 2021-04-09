@@ -7,7 +7,10 @@
             </div>
             <div class="col-md-8">
             <div class="card-body">
-                <h5 class="card-title"><strong><%= user.username %></strong></h5>
+
+                <h5 class="card-title">
+                    <%= link_to user.username, user_path(user.id), class: "link-dark fw-bold" %>
+                </h5>
                 <%= follow_or_unfollow_friend_request(user) %>
                 <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
             </div>

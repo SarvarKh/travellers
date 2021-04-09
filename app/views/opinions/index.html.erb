@@ -12,7 +12,7 @@
         <% end %>
 
         
-        <p class="mb-3">
+        <p class="mb-3 form-control">
             <%= form.label :Travel_tweet %> <br>
             <%= form.text_field :text, class: "form-control", placeholder: "Share your experience about your trip." %>
         </p>
@@ -23,10 +23,22 @@
 
     <%# List travel tweets %>
     <% @opinions.each do |opinion| %>
-        <p>
-            <strong>Username:</strong> <%= opinion.author.username %> <br>
-            <strong>Text:</strong> <%= opinion.text %> <br>
-        </p>
+        <div class="card mb-3" style="min-width: 720px;">
+        <div class="row g-0">
+            <div class="col-md-4">
+            <img src="..." alt="opinion.author.photo">
+            </div>
+            <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title">
+                    <%= link_to opinion.author.username, user_path(opinion.author.id), class: "link-dark fw-bold" %>
+                </h5>
+                <p class="card-text"><%= opinion.text %></p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+            </div>
+        </div>
+        </div>
     <% end %>
 
     <% else %>
