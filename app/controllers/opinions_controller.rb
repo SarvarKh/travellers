@@ -3,7 +3,7 @@ class OpinionsController < ApplicationController
         if Current.user
             @opinion = Current.user.opinions.new 
         end
-        @opinions = Opinion.all
+        @opinions = Opinion.order(created_at: :desc).all
     end
 
     def new
