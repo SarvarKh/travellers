@@ -12,19 +12,19 @@
         <div class="card-group">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title fw-bold">6,542</h5>
+                    <h5 class="card-title fw-bold"><%= @user.opinions.count %></h5>
                     <p class="card-text"><small class="text-muted">Tweets</small></p>
                 </div>
             </div>
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title fw-bold">323</h5>
+                    <h5 class="card-title fw-bold"><%= @user.followings.count %></h5>
                     <p class="card-text"><small class="text-muted">Following</small></p>
                 </div>
             </div>
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title fw-bold">16M</h5>
+                    <h5 class="card-title fw-bold"><%= @user.followers.count %></h5>
                     <p class="card-text"><small class="text-muted">Followers</small></p>
                 </div>
             </div>
@@ -47,6 +47,7 @@
                             <h5 class="card-title">
                                 <%= f.follower.username %>
                             </h5>
+                            <%= follow_or_unfollow_friend_request(f.follower) %>
                         </div>
                     </div>
                 </div>
