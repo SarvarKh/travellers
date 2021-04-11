@@ -1,6 +1,6 @@
 <% if Current.user %>
     <div class="d-flex bd-highlight">
-        <div>
+        <div class="p-5">
             <%# Create travel tweet %>
             <%= form_for(@opinion) do |form| %>
 
@@ -14,43 +14,48 @@
                 <% end %>
 
                 
-                <p class="mb-3 form-control">
-                    <%= form.label :Travel_tweet %> <br>
+                <p class="mb-3 form-control p-3">
+                    <%= form.label :Start_tweeting, class: "fw-bold" %>
                     <%= form.text_field :text, class: "form-control", placeholder: "Share your experience about your trip." %>
                 </p>
-                <p class="mb-3">
+                <p class="mb-5">
                     <%= form.submit "Create travel tweet", class: "btn btn-primary" %>
                 </p>
             <% end %>
 
             <%# List travel tweets %>
-            <% @opinions.each do |opinion| %>
-                <div class="card mb-3">
-                <div class="row g-0">
-                    <div class="col-md-4">
-                    <img src="..." alt="opinion.author.photo">
-                    </div>
-                    <div class="col-md-8">
-                    <div class="card-body">
-                        <h5 class="card-title">
-                            <%= link_to opinion.author.username, user_path(opinion.author.id), class: "link-dark fw-bold" %>
-                        </h5>
-                        <p class="card-text"><%= opinion.text %></p>
-                        <p class="card-text"><small class="text-muted"><%= opinion.created_at %></small></p>
-                        <div>
-                            <%= upvote_or_downvote(opinion) %>
-                            <i class="fas fa-poll"></i>
-                            <small class="text-muted">
-                                <%= opinion.votes.count %>
-                            </small>
+            <div class="card p-3">
+                <h4 class="fw-bold">Travel tweets</h4>
+                <% @opinions.each do |opinion| %>
+                    <div class="mb-3">
+                        <div class="row g-0 p-1">
+                            <div class="col-md-2">
+                                <img src="..." alt="opinion.author.photo">
+                            </div>
+                            <div class="col-md-10">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <%= link_to opinion.author.username, user_path(opinion.author.id), class: "link-dark fw-bold" %>
+                                </h5>
+                                <p class="card-text"><%= opinion.text %></p>
+                                <div class="d-flex justify-content-between">
+                                    <p class="card-text"><small class="text-muted"><%= opinion.created_at %></small></p>
+                                    <div>
+                                        <%= upvote_or_downvote(opinion) %>
+                                        <i class="fas fa-poll"></i>
+                                        <small class="text-muted">
+                                            <%= opinion.votes.count %>
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
                         </div>
                     </div>
-                    </div>
-                </div>
-                </div>
-            <% end %>
+                <% end %>
+            </div>
         </div>
-        <div>
+        <div class="py-5 border-left">
             <%= render partial: "shared/right_sidebar_home" %>
         </div>
     </div>

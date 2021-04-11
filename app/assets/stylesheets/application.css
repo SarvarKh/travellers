@@ -71,3 +71,6 @@ a:hover {
     background-color: rgb(71, 89, 104);
 }
  
+.border-left {
+    border-left: 1px solid #c3c6c8;
+}
