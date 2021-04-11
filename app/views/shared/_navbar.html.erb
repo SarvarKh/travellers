@@ -8,14 +8,14 @@
         </div>
         <div id="navbarNav">
           <% if Current.user %>
-            <ul class="navbar-nav text-secondary">
+            <ul class="navbar-nav text-black-50">
                 <li class="nav-item pe-2">
-                  <%= link_to user_path(Current.user.id), class: "nav-link" do %>
+                  <%= link_to user_path(Current.user.id) do %>
                     <i class="fas fa-cog"></i>
                   <% end %>
                 </li>
                 <li class="nav-item">
-                  <%= link_to logout_path, method: :delete, class: "nav-link btn p-2" do %>
+                  <%= link_to logout_path, method: :delete, class: "btn p-2" do %>
                     Log out<i class="fas fa-door-open"></i>
                   <% end %>
                 </li>
