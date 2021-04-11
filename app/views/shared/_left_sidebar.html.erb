@@ -1,23 +1,47 @@
 <% if Current.user %>
-  <div class="card mb-3" style="width: 280px;">
-    <div class="row g-0">
-      <div class="col-md-4">
-        <img src="..." alt="...">
-      </div>
-      <div class="col-md-8">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    <div class="card mb-3" style="width: 280px;">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img src="..." alt="...">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">
+              <%= link_to Current.user.full_name, user_path(Current.user.id) %>
+            </h5>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-
-    <div>Logged in as: <%= Current.user.username %></div>
-    <%= link_to Current.user.username, user_path(Current.user.id) %>
     <div>
-        <%= button_to 'Log out', logout_path, method: :delete %>
+        <div class="card-group">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold"><%= Current.user.followings.count %></h5>
+                    <p class="card-text"><small class="text-muted">Following</small></p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold"><%= Current.user.followers.count %></h5>
+                    <p class="card-text"><small class="text-muted">Followers</small></p>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <div class="d-flex flex-column bd-highlight mb-3">
+      <div class="p-2 bd-highlight">
+        <%= link_to root_path, class: "nav-link" do %>
+          <i class="fas fa-umbrella-beach"></i>  Home
+        <% end %>
+      </div>
+      <div class="p-2 bd-highlight">
+        <%= link_to root_path, class: "nav-link" do %>
+          <i class="fas fa-user-circle"></i>  Profile
+        <% end %>
+      </div>
+    </div>
+
     
 <% end %>

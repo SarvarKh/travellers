@@ -12,7 +12,7 @@
                     <%= link_to user.username, user_path(user.id), class: "link-dark fw-bold" %>
                 </h5>
                 <%= follow_or_unfollow_friend_request(user) %>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                <p class="card-text"><small class="text-muted"><%= user.created_at %></small></p>
             </div>
             </div>
         </div>

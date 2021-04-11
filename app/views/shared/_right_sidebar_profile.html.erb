@@ -4,6 +4,7 @@
             <img src="..." class="card-img-top" alt="@user.photo">
             <div class="card-body">
                 <h5 class="card-title link-dark fw-bold"><%= @user.username %></h5>
+                <%= follow_or_unfollow_friend_request(@user) %>
                 <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
             </div>
         </div>
