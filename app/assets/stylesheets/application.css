@@ -44,8 +44,8 @@
 }
 
 a:hover {
-    opacity: 0.5;
-    color: white;
+    opacity: 0.7;
+    color: rgb(162, 170, 177);
 }
 
 .small {

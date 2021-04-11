@@ -3,14 +3,14 @@
     <div class="d-flex justify-content-between">
         <div class="navbar-nav">
             <%= link_to root_path, class: "nav-link" do %>
-               <i class="fas fa-umbrella-beach text-white"></i>
+               <i class="fas fa-umbrella-beach text-white "></i>
             <% end %>
         </div>
         <div id="navbarNav">
           <% if Current.user %>
             <ul class="navbar-nav text-black-50">
                 <li class="nav-item pe-2">
-                  <%= link_to user_path(Current.user.id) do %>
+                  <%= link_to user_path(Current.user.id), class: "btn p-2" do %>
                     <i class="fas fa-cog"></i>
                   <% end %>
                 </li>
