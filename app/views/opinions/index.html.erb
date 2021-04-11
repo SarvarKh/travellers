@@ -37,6 +37,13 @@
                         </h5>
                         <p class="card-text"><%= opinion.text %></p>
                         <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        <div>
+                            <%= upvote_or_downvote(opinion) %>
+                            <i class="fas fa-poll"></i>
+                            <small class="text-muted">
+                                <%= opinion.votes.count %>
+                            </small>
+                        </div>
                     </div>
                     </div>
                 </div>

@@ -43,4 +43,10 @@
      text-decoration: none
 }
 
+.small {
+    font-size: 0.8rem;
+    padding: 0.2rem 0.8rem;
+    margin-right: 1rem;
+}
+
  
