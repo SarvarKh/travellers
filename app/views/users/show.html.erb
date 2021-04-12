@@ -7,10 +7,14 @@
                 <% @user.opinions.each do|opinion| %>    
                     <div class="card mb-3">
                     <div class="row g-0">
-                        <div class="col-md-4">
-                        <img src="..." alt="@user.photo">
+                        <div class="col-md-2 d-flex justify-content-center align-items-center">
+                            <div>
+                                <% if opinion.author.photo.attached? %>
+                                    <img src="<%= (url_for(opinion.author.photo)) %>" class="img-100 rounded">
+                                <% end %>
+                            </div>
                         </div>
-                        <div class="col-md-8">
+                        <div class="col-md-10">
                         <div class="card-body">
                             <h5 class="card-title link-dark fw-bold"><%= @user.username %></h5>
                             <p class="card-text"><%= opinion.text %></p>
@@ -24,7 +28,7 @@
         </div>
     </div>
 
-    <div class="py-3 border-left">
+    <div class="py-3 border-left" style="height: 100vh;">
         <div><%= render partial: "shared/right_sidebar_profile" %></div>
     </div>
 </div>

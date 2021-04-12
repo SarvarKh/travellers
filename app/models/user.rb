@@ -4,6 +4,8 @@ class User < ApplicationRecord
     validates :photo, presence: true
     validates :cover_image, presence: true
 
+    has_one_attached :photo
+
     has_many :opinions, class_name: "Opinion", foreign_key: "author_id"
     has_many :followings, class_name: "Following", foreign_key: "follower_id"
     has_many :followers, class_name: "Following", foreign_key: "followed_id"

@@ -18,8 +18,8 @@
         <%= form.text_field :full_name, class: "form-control", placeholder: "John Doe" %>
     </p>
     <p class="mb-3">
-        <%= form.label :photo %>
-        <%= form.text_area :photo, class: "form-control", placeholder: "john_doe_image.jpeg" %>
+        <%= form.label "Profile Photo" %>
+        <%= form.file_field :photo, class: "form-control" %>
     </p>
     <p class="mb-3">
         <%= form.label :cover_image %>

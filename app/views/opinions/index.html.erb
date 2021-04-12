@@ -30,7 +30,9 @@
                     <div class="mb-3">
                         <div class="row g-0 p-1">
                             <div class="col-md-2">
-                                <img src="..." alt="opinion.author.photo">
+                                <% if opinion.author.photo.attached? %>
+                                    <img src="<%= (url_for(opinion.author.photo)) %>" class="img-80 rounded">
+                                <% end %>
                             </div>
                             <div class="col-md-10">
                             <div class="card-body">

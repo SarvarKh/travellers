@@ -3,7 +3,9 @@
     <div class="p-4 dark-grey">
       <div class="row g-0">
         <div class="col-md-4">
-          <img src="..." alt="...">
+          <% if Current.user.photo.attached? %>
+            <img src="<%= (url_for(Current.user.photo)) %>" class="img-80 rounded">
+          <% end %>
         </div>
         <div class="col-md-8">
           <div class="card-body">

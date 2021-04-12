@@ -78,3 +78,11 @@ a:hover {
 .border-btm {
     border-bottom: 1px solid #c3c6c8;
 }
+
+.img-80 {
+    max-width: 80px;
+}
+
+.img-100 {
+    max-width: 100px;
+}
