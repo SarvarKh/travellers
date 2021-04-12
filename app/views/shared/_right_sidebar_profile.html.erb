@@ -2,7 +2,7 @@
     <div>
         <div class="p-4" style="width: 20rem;">
             <% if Current.user.photo.attached? %>
-                <img src="<%= (url_for(Current.user.photo)) %>" class="img-100 rounded mx-auto d-block">
+                <img src="<%= (url_for(@user.photo)) %>" class="img-100 rounded-circle mx-auto d-block">
             <% end %>
             <div class="card-body text-center">
                 <h5 class="card-title link-dark fw-bold"><%= @user.username %></h5>

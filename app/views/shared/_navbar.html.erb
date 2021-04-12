@@ -10,8 +10,13 @@
           <% if Current.user %>
             <ul class="navbar-nav text-black-50">
                 <li class="nav-item pe-2">
+                  <%= link_to edit_user_path(Current.user.id), class: "btn p-2" do %>
+                    <i class="fas fa-user-edit"></i>
+                  <% end %>
+                </li>
+                <li class="nav-item pe-2">
                   <%= link_to user_path(Current.user.id), class: "btn p-2" do %>
-                    <i class="fas fa-cog"></i>
+                    <i class="fas fa-user"></i>
                   <% end %>
                 </li>
                 <li class="nav-item">

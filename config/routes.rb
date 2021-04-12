@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root "opinions#index"
-  resources :users, only: [:show, :new, :create]
+  resources :users, only: [:edit, :update, :show, :new, :create]
   resources :opinions, only: [:index, :new, :create, :destroy]
   resources :followings, only: [:create, :destroy]
   resources :votes, only: [:create, :destroy]
