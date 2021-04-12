@@ -41,7 +41,7 @@
                                 </h5>
                                 <p class="card-text"><%= opinion.text %></p>
                                 <div class="d-flex justify-content-between">
-                                    <p class="card-text"><small class="text-muted"><%= opinion.created_at %></small></p>
+                                    <p class="card-text"><small class="text-muted"><%= time_ago_in_words(opinion.created_at) %></small></p>
                                     <div>
                                         <%= upvote_or_downvote(opinion) %>
                                         <i class="fas fa-poll"></i>

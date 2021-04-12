@@ -19,7 +19,7 @@
                             <%= follow_or_unfollow_friend_request(user) %>
                         </div>
                     </div>
-                    <p class="card-text"><small class="text-muted"><%= user.created_at %></small></p>
+                    <p class="card-text"><small class="text-muted"><%= time_ago_in_words(user.created_at) %></small></p>
                 </div>
                 </div>
             </div>
