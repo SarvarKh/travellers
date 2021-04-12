@@ -18,11 +18,11 @@
   <body>
     <%= render partial: "shared/flash" %>
     
-    <div class="d-flex flex-row bd-highlight mb-3" style="height: 100%;">
+    <div class="d-flex flex-row bd-highlight" style="min-height: 100vh;">
       <div class="p-0 bg-light-grey">
         <%= render partial: "shared/left_sidebar" %>
       </div>
-      <div class="p-0">
+      <div class="p-0" style="width: 100%;">
         <%= render partial: "shared/navbar" %>
         <div class="d-flex bd-highlight">
           <div><%= yield %></div>
