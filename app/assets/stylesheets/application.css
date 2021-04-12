@@ -86,3 +86,7 @@ a:hover {
 .img-100 {
     max-width: 100px;
 }
+
+.cover-image {
+    max-width: 60vw;
+}

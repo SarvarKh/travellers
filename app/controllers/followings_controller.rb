@@ -2,7 +2,7 @@ class FollowingsController < ApplicationController
     def create
         @following = Current.user.followings.new(following_params)
         if @following.save
-            redirect_to root_path, notice: "You started to follow a traveller."
+            redirect_to root_path
         else
             render :new, alert: "You added invalid input!"
         end

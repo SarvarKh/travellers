@@ -2,7 +2,7 @@ class VotesController < ApplicationController
     def create
         @vote = Current.user.votes.new(vote_params)
         if @vote.save
-            redirect_to root_path, notice: "You voted up."
+            redirect_to root_path
         else
             render :new, alert: "You added invalid input!"
         end
