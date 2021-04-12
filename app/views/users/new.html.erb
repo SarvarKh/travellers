@@ -1,31 +1,36 @@
-<%= form_for(@user) do |form| %>
+<div style="width: 100vw;">
+    <div class="container form-control mt-4 p-4">
+    <h2 class="my-2 p-2">Sign in</h2>
+    <%= form_for(@user) do |form| %>
 
-    <% if @user.errors.any? %>
-        <div class="alert alert-danger">
-            <h5 class="fw-bold">Invalid input!</h5>
-            <%= @user.errors.full_messages.each do |error| %>
-                <div><%= error %></div>
-            <% end %>
-        </div>
+        <% if @user.errors.any? %>
+            <div class="alert alert-danger">
+                <h5 class="fw-bold">Invalid input!</h5>
+                <%= @user.errors.full_messages.each do |error| %>
+                    <div><%= error %></div>
+                <% end %>
+            </div>
+        <% end %>
+
+        <p class="mb-3">
+            <%= form.label :username, class: "form-label" %>
+            <%= form.text_field :username, class: "form-control", autofocus: true, placeholder: "John_D" %>
+        </p>
+        <p class="mb-3">
+            <%= form.label :full_name %>
+            <%= form.text_field :full_name, class: "form-control", placeholder: "John Doe" %>
+        </p>
+        <p class="mb-3">
+            <%= form.label "Profile Photo" %>
+            <%= form.file_field :photo, class: "form-control", direct_upload: true %>
+        </p>
+        <p class="mb-3">
+            <%= form.label :cover_image %>
+            <%= form.text_area :cover_image, class: "form-control", placeholder: "john_doe_cover_image.jpeg" %>
+        </p>
+        <p class="mb-3">
+            <%= form.submit "Sign up", class: "btn btn-primary" %>
+        </p>
     <% end %>
-
-    <p class="mb-3">
-        <%= form.label :username, class: "form-label" %>
-        <%= form.text_field :username, class: "form-control", autofocus: true, placeholder: "John_D" %>
-    </p>
-    <p class="mb-3">
-        <%= form.label :full_name %>
-        <%= form.text_field :full_name, class: "form-control", placeholder: "John Doe" %>
-    </p>
-    <p class="mb-3">
-        <%= form.label "Profile Photo" %>
-        <%= form.file_field :photo, class: "form-control", direct_upload: true %>
-    </p>
-    <p class="mb-3">
-        <%= form.label :cover_image %>
-        <%= form.text_area :cover_image, class: "form-control", placeholder: "john_doe_cover_image.jpeg" %>
-    </p>
-    <p class="mb-3">
-        <%= form.submit "Sign up", class: "btn btn-primary" %>
-    </p>
-<% end %>
+    </div>
+</div>
