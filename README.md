@@ -28,7 +28,7 @@
 
 ## Live Demo
 
-TBA
+[travellers-tweet.herokuapp.com](https://travellers-tweet.herokuapp.com/)
 
 ## Here is a description of business requirements for the app:
 <div style="display: flex; flex-wrap: wrap">
@@ -109,10 +109,6 @@ Open `http://localhost:3000/` in your browser.
     rpsec --format documentation
 ```
 
-
-### Deployment
-
-TBA
 
 ## Authors
 
