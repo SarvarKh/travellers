@@ -1,7 +1,7 @@
 class OpinionsController < ApplicationController
   def index
     @opinion = Current.user.opinions.new if Current.user
-    @opinions = Opinion.order(created_at: :desc).all
+    @opinions = Opinion.order(created_at: :desc).all.includes(:author)
   end
 
   def new
