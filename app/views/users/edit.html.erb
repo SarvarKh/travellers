@@ -26,7 +26,7 @@
         </p>
         <p class="mb-3">
             <%= form.label :cover_image %>
-            <%= form.file_field :cover_image, class: "form-control" %>
+            <%= form.file_field :cover_image, class: "form-control", direct_upload: true %>
         </p>
         <p class="mb-3">
             <%= form.submit "Update", class: "btn btn-primary" %>
