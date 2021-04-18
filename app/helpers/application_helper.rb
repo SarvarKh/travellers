@@ -36,4 +36,10 @@ module ApplicationHelper
       )
     end
   end
+
+  def left_user_photo
+    if Current.user.photo.attached?
+      tag("img", src: url_for(Current.user.photo), class: ["img-80", "rounded"])
+    end
+  end
 end
