@@ -1,34 +1,13 @@
 <div class="d-flex bd-highlight">
     <div style="min-width: 60vw;">
         <div class="container">
-            <% if @user.cover_image.attached? %>
-                    <img src="<%= (url_for(@user.cover_image)) %>" class="cover-image rounded d-inline-block p-5">
-            <% end %>
+            <%= cover_image %>
         </div>
 
         <div class="d-flex bd-highlight">
             <div class="p-5">
                 <div class="container">
-                    <% @user.opinions.each do|opinion| %>
-                        <div class="card mb-3">
-                        <div class="row g-0">
-                            <div class="col-md-2 d-flex justify-content-center align-items-center">
-                                <div>
-                                    <% if opinion.author.photo.attached? %>
-                                        <img src="<%= (url_for(opinion.author.photo)) %>" class="img-100 rounded">
-                                    <% end %>
-                                </div>
-                            </div>
-                            <div class="col-md-10">
-                            <div class="card-body">
-                                <h5 class="card-title link-dark fw-bold"><%= @user.username %></h5>
-                                <p class="card-text"><%= opinion.text %></p>
-                                <p class="card-text"><small class="text-muted"><%= time_ago_in_words(@user.created_at) %></small></p>
-                            </div>
-                            </div>
-                        </div>
-                        </div>    
-                    <% end %>
+                    <%= user_opinion(@user) %>
                 </div>
             </div>
         </div>
