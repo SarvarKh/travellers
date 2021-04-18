@@ -88,3 +88,7 @@ a:hover {
 .cover-image {
   max-width: 60vw;
 }
+
+.right_home {
+  min-width: 280px;
+}

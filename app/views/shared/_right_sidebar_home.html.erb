@@ -1,29 +1,4 @@
 <div class="px-4">
     <h4 class="fw-bold">Travel tweets</h4>
-    <% if Current.user %>
-        <% User.order(created_at: :desc).all.each do |user| %>
-            <div class="mb-3" style="min-width: 280px;">
-            <div class="row g-0">
-                <div class="col-md-3">
-                    <% if user.photo.attached? %>
-                        <img src="<%= (url_for(user.photo)) %>" class="img-80 rounded">
-                    <% end %>
-                </div>
-                <div class="col-md-9">
-                <div class="card-body">
-                    <div class="d-flex justify-content-between mb-2">
-                        <h5 class="card-title">
-                            <%= link_to user.username, user_path(user.id), class: "link-dark fw-bold" %>
-                        </h5>
-                        <div>
-                            <%= follow_or_unfollow_friend_request(user) %>
-                        </div>
-                    </div>
-                    <p class="card-text"><small class="text-muted"><%= time_ago_in_words(user.created_at) %></small></p>
-                </div>
-                </div>
-            </div>
-            </div>
-        <% end %>
-    <% end %>
+    <%= right_home %>
 </div>

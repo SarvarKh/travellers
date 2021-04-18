@@ -65,4 +65,37 @@ module ApplicationHelper
             end
           end
   end
+
+  def right_home
+    if Current.user
+      User.order(created_at: :desc).all.map do |user|
+        content_tag :div, :class=>"mb-3 right_home" do
+          content_tag :div, :class=>"row g-0" do
+            concat(content_tag(:div, class: "col-md-3") do
+                    if user.photo.attached?
+                      tag("img", src: url_for(user.photo), class: ["img-80", "rounded"])
+                    end
+            end)
+            concat(content_tag(:div, class: "col-md-9") do
+              content_tag :div, :class=>"card-body" do
+                concat(content_tag(:div, class: "d-flex justify-content-between mb-2") do
+                  concat(content_tag(:h5, class: "card-title") do
+                    link_to(user_path(user.id), class: "link-dark fw-bold") do
+                      concat(content_tag(:span, user.username))
+                    end
+                  end)
+                  concat(content_tag(:div) do
+                    concat(content_tag(:span, follow_or_unfollow_friend_request(user)))
+                  end)
+                end)
+                concat(content_tag(:p, class: "card-text") do
+                  concat(content_tag(:small, time_ago_in_words(user.created_at), class: "text-muted"))
+                end)
+              end
+            end)
+          end
+        end
+      end.join.html_safe
+    end
+  end
 end
