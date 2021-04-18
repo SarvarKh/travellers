@@ -57,7 +57,7 @@ module ApplicationHelper
                 end
               end)
               concat(content_tag(:li, class: "nav-item pe-2") do
-                link_to(logout_path, class: "btn p-2") do
+                link_to(logout_path, method: :delete, class: "btn p-2") do
                   concat(content_tag(:span, "Log out"))
                   concat(content_tag(:i, " ", class: "fas fa-door-open"))
                 end

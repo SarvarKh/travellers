@@ -13,7 +13,7 @@ class FollowingsController < ApplicationController
 
     if following
       following.destroy
-      redirect_to root_path, notice: 'You unfollowed the tvaller.'
+      redirect_to root_path
     else
       redirect_to root_path, alert: 'You cannot recall friend request that you recalled already.'
     end
