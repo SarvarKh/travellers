@@ -13,7 +13,7 @@ class VotesController < ApplicationController
 
     if vote
       vote.destroy
-      redirect_to root_path, notice: 'You recalled your vote.'
+      redirect_to root_path
     else
       redirect_to root_path, alert: 'You cannot recall the vote that you recalled already.'
     end
