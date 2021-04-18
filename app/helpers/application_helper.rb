@@ -98,4 +98,30 @@ module ApplicationHelper
       end.join.html_safe
     end
   end
+
+  def right_user_photo
+    if Current.user.photo.attached?
+      tag("img", src: url_for(@user.photo), class: ["img-100", "rounded-circle", "mx-auto", "d-block"])
+    end
+  end
+
+  def right_profile(user)
+    user.followers.map do |f|
+      content_tag :div, :class=>"mb-1 right_home" do
+        content_tag :div, :class=>"row g-0 p-3" do
+          concat(content_tag(:div, class: "col-md-4") do
+            tag("img", src: url_for(f.follower.photo), class: ["img-80", "rounded-circle", "mx-auto", "d-block"])
+          end)
+          concat(content_tag(:div, class: "col-md-8") do
+            content_tag :div, :class=>"card-body" do
+              concat(content_tag(:div, class: "card-title fw-bold") do
+                concat(content_tag(:span, f.follower.full_name))
+              end)
+              concat(content_tag(:span, follow_or_unfollow_friend_request(f.follower)))
+            end
+          end)
+        end
+      end
+    end.join.html_safe
+  end
 end

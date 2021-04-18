@@ -1,9 +1,7 @@
 <div>
     <div>
         <div class="p-4" style="width: 20rem;">
-            <% if Current.user.photo.attached? %>
-                <img src="<%= (url_for(@user.photo)) %>" class="img-100 rounded-circle mx-auto d-block">
-            <% end %>
+            <%= right_user_photo %>
             <div class="card-body text-center">
                 <h5 class="card-title link-dark fw-bold"><%= @user.username %></h5>
                 <%= follow_or_unfollow_friend_request(@user) %>
@@ -39,22 +37,6 @@
         </div>
     </div>
     <div>
-        <% @user.followers.each do |f| %>
-            <div class="mb-1" style="min-width: 280px;">
-                <div class="row g-0 p-3">
-                    <div class="col-md-4">
-                        <img src="..." alt="user.photo">
-                    </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <div class="card-title fw-bold">
-                                <%= f.follower.full_name %>
-                            </div>
-                            <%= follow_or_unfollow_friend_request(f.follower) %>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        <% end %>
+        <%= right_profile(@user) %>
     </div>
 </div>
