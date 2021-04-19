@@ -1,21 +1,21 @@
 # Traveller - Capstone Project for Ruby on Rails module
 
-> App to share opinions about travelling destinations with people who follow you. The project is built for the Ruby on Rails capstone based on a redesign of Twitter.
+> App to share opinions about traveling destinations with people who follow you. The project is built for the Ruby on Rails capstone based on a redesign of Twitter.
 
 <div style="display: flex; flex-wrap: wrap">
 <div align="center">
-  <img src="01_welcome.png?raw=true" width="40%" height="auto"/>
-  <img src="02_sign_up.png?raw=true" width="40%" height="auto"/>
+  <img src="image/01_welcome.png?raw=true" width="40%" height="auto"/>
+  <img src="image/02_sign_up.png?raw=true" width="40%" height="auto"/>
 </div>
 
 <div align="center">
-  <img src="03_home.png?raw=true" width="40%" height="auto"/>
-  <img src="04_profile.png?raw=true" width="40%" height="auto"/>
+  <img src="image/03_home.png?raw=true" width="40%" height="auto"/>
+  <img src="image/04_profile.png?raw=true" width="40%" height="auto"/>
 </div>
 
 <div align="center">
-  <img src="05_edit.png?raw=true" width="40%" height="auto"/>
-  <img src="06_profile_2.png?raw=true" width="40%" height="auto"/>
+  <img src="image/05_edit.png?raw=true" width="40%" height="auto"/>
+  <img src="image/06_profile_2.png?raw=true" width="40%" height="auto"/>
 </div>
 </div>
 
@@ -33,12 +33,13 @@
 ## Here is a description of business requirements for the app:
 <div style="display: flex; flex-wrap: wrap">
 <div align="center">
-  <img src="spec_1.png?raw=true" width="40%" height="auto"/>
-  <img src="spec_2.png?raw=true" width="40%" height="auto"/>
+  <img src="image/spec_1.png?raw=true" width="40%" height="auto"/>
+  <img src="image/spec_2.png?raw=true" width="40%" height="auto"/>
+  <img src="image/erd.png?raw=true" width="40%" height="auto"/>
 </div>
 </div>
 
-1. The user logs in to the app, only by typing the username (a proper authenticated login is **not** a requirement).
+1. The user logs in to the app, only by typing the username (a properly authenticated login is **not** a requirement).
 2. The user is presented with the homepage (see the *Homepage* screenshot above) that includes:
     1. Left-side menu (includes only links to pages that are implemented).
     2. *Tweets* tab in the centre (skip *Photos* and *Videos* for this MVP).
@@ -63,6 +64,15 @@
 
 ## Getting Started
 
+### Prerequisites
+
+Ruby: 2.7.1
+Rails: 6.1.1
+Postgres: >=9.5
+
+
+### Setup
+
 To get a local copy up and running follow these simple example steps.
 
 - On the project GitHub page, navigate to the main page of the repository [this page](https://github.com/SarvarKh/travellers).
@@ -77,21 +87,18 @@ To get a local copy up and running follow these simple example steps.
 Please Note that you must have Git installed on your PC, this can be done [here](https://gist.github.com/derhuerst/1b15ff4652a867391f03).
 
 
-### Prerequisites
+Install gems with:
 
-Ruby: 2.7.1
-Rails: 6.1.1
-Postgres: >=9.5
+```
+    bundle install
+```
 
-### Github Actions
+Setup database with:
 
-To make sure the linters' checks using Github Actions work properly, you should follow the next steps:
-
-1. On your recently forked repo, enable the GitHub Actions in the Actions tab.
-2. Create the `feature/branch` and push.
-3. Start working on your milestone as usual.
-4. Open a PR from the `feature/branch` when your work is done.
-
+```
+    rails db:create
+    rails db:migrate
+```
 
 ### Usage
 
@@ -108,6 +115,17 @@ Open `http://localhost:3000/` in your browser.
 ```
     rpsec --format documentation
 ```
+
+
+### Github Actions
+
+To make sure the linters' checks using Github Actions work properly, you should follow the next steps:
+
+1. On your recently forked repo, enable the GitHub Actions in the Actions tab.
+2. Create the `feature/branch` and push.
+3. Start working on your milestone as usual.
+4. Setup [Rubocop and Stylelint linters](https://github.com/microverseinc/linters-config/tree/master/ror)
+5. Open a PR from the `feature/branch` when your work is done.
 
 
 ## Authors
