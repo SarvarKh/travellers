@@ -1,6 +1,21 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
+  describe 'Associations' do
+    it { should have_one_attached(:photo) }
+    it { should have_one_attached(:cover_image) }
+    it { should have_many(:followers), foreign_key: :followed_id, class_name: :Following }
+    it { should have_many(:followings), foreign_key: :follower_id, class_name: :Following }
+    it { should have_many(:opinions), foreign_key: :autho_id, class_name: :Opinion }
+    it { should have_many(:votes) }
+  end
+
+  describe 'validations' do
+    it { should validate_presence_of(:username) }
+    it { should validate_uniqueness_of(:username) }
+    it { should validate_presence_of(:full_name) }
+  end
+
   context 'with name Marcel' do
     it 'follows user with name Gary' do
       user1 = User.create(username: 'Marcel', full_name: 'Marcel Krause')
