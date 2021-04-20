@@ -1,0 +1,17 @@
+<div style="width: 100vw;">
+    <div class="container form-control mt-4 p-2">
+    <h2 class="my-2 p-2">Sign in</h2>
+    <%= form_with url: sign_in_path do |form| %>
+    <div class="p-2">
+        <p class="my-3">
+            <%= form.label :username, class: "form-label" %>
+            <%= form.text_field :username, class: "form-control", autofocus: true, placeholder: "John_D" %>
+        </p>
+
+        <p class="mb-3">
+            <%= form.submit "Sign in", class: "btn btn-primary" %>
+        </p>
+    </div>
+    <% end %>
+    </div>
+</div>

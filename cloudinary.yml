@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: sarvar
+  api_key: '377577882524893'
+  api_secret: XgRvy9eVy43SiV3Mqvn88eaUeCE
+  enhance_image_tag: true
+  static_file_support: false
+production:
+  cloud_name: sarvar
+  api_key: '377577882524893'
+  api_secret: XgRvy9eVy43SiV3Mqvn88eaUeCE
+  enhance_image_tag: true
+  static_file_support: true
+test:
+  cloud_name: sarvar
+  api_key: '377577882524893'
+  api_secret: XgRvy9eVy43SiV3Mqvn88eaUeCE
+  enhance_image_tag: true
+  static_file_support: false

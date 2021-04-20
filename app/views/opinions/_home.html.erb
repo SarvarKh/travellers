@@ -1,0 +1,25 @@
+            <div class="d-flex bd-highlight">
+                <div class="p-5">
+                
+                    <%= form_for(@opinion) do |form| %>
+                    
+                        <%= check_errors %>
+
+                        <p class="mb-3 form-control p-3">
+                            <%= form.label :Start_tweeting, class: "fw-bold" %>
+                            <%= form.text_field :text, class: "form-control", placeholder: "Share your experience about your trip." %>
+                        </p>
+                        <p class="mb-5">
+                            <%= form.submit "Create travel tweet", class: "btn btn-primary" %>
+                        </p>
+                    <% end %>
+        
+                    <div class="card p-3">
+                        <h4 class="fw-bold">Travel tweets</h4>
+                        <%= show_opinions(@opinions) %>
+                    </div>
+                </div>
+                <div class="py-5 border-left">
+                    <%= render partial: "shared/right_sidebar_home" %>
+                </div>
+            </div>
