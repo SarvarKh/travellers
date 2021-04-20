@@ -35,7 +35,6 @@
 <div align="center">
   <img src="image/spec_1.png?raw=true" width="40%" height="auto"/>
   <img src="image/spec_2.png?raw=true" width="40%" height="auto"/>
-  <img src="image/erd.png?raw=true" width="40%" height="auto"/>
 </div>
 </div>
 
@@ -122,7 +121,7 @@ Open `http://localhost:3000/` in your browser.
 ### Run tests
 
 ```
-    rpsec --format documentation
+    rspec --format documentation
 ```
 
 
