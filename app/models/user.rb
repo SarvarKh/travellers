@@ -1,8 +1,6 @@
 class User < ApplicationRecord
   validates :username, presence: true, uniqueness: true
   validates :full_name, presence: true
-  # validates :photo, content_type: ['image/png', 'image/jpg', 'image/jpeg']
-  # validates :cover_image, content_type: ['image/png', 'image/jpg', 'image/jpeg']
 
   has_one_attached :photo, dependent: :destroy
   has_one_attached :cover_image, dependent: :destroy
