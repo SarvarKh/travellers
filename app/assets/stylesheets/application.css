@@ -92,3 +92,11 @@ a:hover {
 .right_home {
   min-width: 280px;
 }
+
+.profile-main {
+  min-width: 973px;
+}
+
+.profile-tweet {
+  min-width: 973px;
+}
