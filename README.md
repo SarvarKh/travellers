@@ -60,7 +60,16 @@
     4. List of people who follow this user.
 7. At the end extend your MVP app with one simple feature of your choice.
 
+#### n+1 problem solution
+<div>
+<div align="center">
+  <div> Before </div>
+  <img src="image/query_before.png?raw=true" width="60%" height="auto"/>
 
+  <div> After </div>
+  <img src="image/query_after.png?raw=true" width="60%" height="auto"/>
+</div>
+</div>
 
 ## Getting Started
 
