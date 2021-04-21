@@ -1,5 +1,5 @@
             <div class="d-flex bd-highlight">
-                <div class="p-5">
+                <div class="p-5 profile-main">
                 
                     <%= form_for(@opinion) do |form| %>
                     
@@ -19,7 +19,7 @@
                         <%= show_opinions(@opinions) %>
                     </div>
                 </div>
-                <div class="py-5 border-left">
+                <div class="py-5 border-left" style="min-height: 100vh;">
                     <%= render partial: "shared/right_sidebar_home" %>
                 </div>
             </div>
